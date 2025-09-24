@@ -1,33 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom"
+import Landing from "./pages/landing"
+import Weather from "./pages/weather"
+import { RecoilRoot } from "recoil"
+import MarketPrice from "./pages/marketPrice"
+import CropAdvisory from "./pages/cropAdvisory"
+import Community from "./pages/community"
+import Marketplace from "./pages/marketPlace"
+import Chatbot from "./pages/chatBot"
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <RecoilRoot>
+    <BrowserRouter>
+    <Routes>
+      <Route element={<Landing/>} path="/"/>
+      <Route element={<Weather/>} path="/weather"/>
+      <Route element={<MarketPrice/>} path="/market-price"/>
+      <Route element={<CropAdvisory/>} path="/crop-suggestion"/>
+      <Route element={<Community/>} path="/community-page"/>
+      <Route element={<Marketplace/>} path="/market-place"/>
+      <Route element={<Chatbot/>} path="/chat-bot"/>
+    </Routes>
+    </BrowserRouter>
+    </RecoilRoot>
     </>
   )
 }
