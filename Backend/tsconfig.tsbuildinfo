@@ -1,1 +1,1 @@
-{"root":["./src/app.ts","./src/index.ts","./src/db/db.ts","./src/models/farmer.models.ts"],"version":"5.9.2"}
+{"root":["./src/app.ts","./src/index.ts","./src/zodschema/farmerschema.ts","./src/controllers/farmer.controller.ts","./src/db/db.ts","./src/middlewares/validation.middleware.ts","./src/models/conversation.models.ts","./src/models/enquiry.model.ts","./src/models/farmer.models.ts","./src/models/orders.models.ts","./src/routers/farmer.router.ts"],"version":"5.9.2"}
