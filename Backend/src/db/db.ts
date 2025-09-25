@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 
 export const db =async ()=>{
-   const status = await  mongoose.connect('mongodb+srv://nyayasetuportal_db_user:bDtwLzGhDbuTBxKS@cluster0.nlilfbd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
-   console.log(status.connection.host);
+   if(process.env.MONGO_DB_CONNECTION_URL){
+      const status = await  mongoose.connect(process.env.MONGO_DB_CONNECTION_URL);
+      console.log(status.connection.host);
+   }
 }
 
 
